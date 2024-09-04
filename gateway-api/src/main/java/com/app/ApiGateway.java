@@ -1,2 +1,4 @@
-package com.app;public class ApiGateway {
+package com.app;
+
+public class ApiGateway {
 }
