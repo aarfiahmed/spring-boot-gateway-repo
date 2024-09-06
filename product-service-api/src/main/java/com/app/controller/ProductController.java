@@ -14,19 +14,19 @@ import java.util.List;
 public class ProductController {
     List<Product> products = new ArrayList<>();
 
-    @GetMapping("/vi/products")
+    @GetMapping("/v1/products")
     public List<Product> getAllProducts() {
         log.info("returning all products");
         return products;
     }
 
-    @GetMapping("/vi/products/{id}")
+    @GetMapping("/v1/products/{id}")
     public Product getProductById(@PathVariable Integer id) {
         log.info("returning  products of id {}", id);
         return products.stream().filter(product -> product.getId().equals(id)).findFirst().orElse(null);
     }
 
-    @PostMapping("/vi/products")
+    @PostMapping("/v1/products")
     public ResponseEntity<Product> createProduct(@RequestBody Product product){
         log.info("creating product {}",product);
         products.add(product);

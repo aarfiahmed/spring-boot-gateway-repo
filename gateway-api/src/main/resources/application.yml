@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.gateway.route.RouteDefinitionLocator: INFO
+    org.springframework.cloud.gateway: TRACE
+
+
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product_service_route
+          uri: http://localhost:8181
+          predicates:
+            - Path=/api/v1/products
+          filters:
+            - SetPath=/v1/products
+  main:
+    web-application-type: reactive
