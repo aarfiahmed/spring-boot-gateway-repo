@@ -1,0 +1,2 @@
+order-service-uri: http://order-service-api:8282
+product-service-uri: http://product-service-api:8181

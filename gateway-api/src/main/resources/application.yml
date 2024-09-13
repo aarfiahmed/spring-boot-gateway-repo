@@ -14,29 +14,32 @@ spring:
     gateway:
       routes:
         - id: product_service_route
-          uri: http://localhost:8181
+          uri: ${product-service-uri}
           predicates:
             - Path=/api/v1/products
           filters:
             - SetPath=/v1/products
         - id: product_service_route
-          uri: http://localhost:8181
+          uri: ${product-service-uri}
           predicates:
             - Path=/api/v1/products/{id}
           filters:
             - SetPath=/v1/products/{id}
 
         - id: order_service_route
-          uri: http://localhost:8282
+          uri: ${order-service-uri}
           predicates:
             - Path=/api/v1/orders
           filters:
             - SetPath=/v1/orders
         - id: order_service_route
-          uri: http://localhost:8282
+          uri: ${order-service-uri}
           predicates:
             - Path=/api/v1/orders/{id}
           filters:
             - SetPath=/v1/orders/{id}
   main:
     web-application-type: reactive
+
+order-service-uri: http://localhost:8282
+product-service-uri: http://localhost:8181
