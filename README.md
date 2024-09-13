@@ -79,5 +79,16 @@
    3. POST  /api/v1/orders  {"orderId": 1,"productId": 55, "orderAmount": "1500"}
       
 
+# How To Build
+* Docker used to deploy the application so follow the below step to build and deploy all the application
+  ````
+   Build and Deploy
+   1. mvn clean install
+   2. docker-compose up --build -d
+
+   To stop the services
+   1. docker-compose down
+
+
 # Author
 * Aarfi Siddique
